@@ -1,0 +1,70 @@
+.theme-light {
+  --color-primary: #0079FF;
+  --color-secondary: #697C9A;
+  --text-primary: #2B3442;
+  --text-secondary: #4B6A9B;
+  --background-primary: #F6F8FF;
+  --background-secondary: #FEFEFE;
+}
+
+.theme-light {
+  --color-primary: #0079FF;
+  --color-secondary: #FFFFFF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --background-primary: #141D2F;
+  --background-secondary: #1E2A47;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-family: 'Space Mono';
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+h2 {
+  font-family: 'Space Mono';
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 33px;
+}
+
+h3 {
+  font-family: 'Space Mono';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+h4 {
+  font-family: 'Space Mono';
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Mono';
+  font-size: 15px;
+  line-height: 25px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
