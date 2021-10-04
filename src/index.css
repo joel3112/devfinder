@@ -1,19 +1,23 @@
 .theme-light {
   --color-primary: #0079FF;
   --color-secondary: #697C9A;
-  --text-primary: #2B3442;
-  --text-secondary: #4B6A9B;
+  --color-title: #2B3442;
+  --color-description: #4B6A9B;
+  --color-white: #FFFFFF;
   --background-primary: #F6F8FF;
   --background-secondary: #FEFEFE;
+  --box-shadow-primary: 0px 16px 30px -10px #4660BB33;
 }
 
-.theme-light {
+.theme-dark {
   --color-primary: #0079FF;
   --color-secondary: #FFFFFF;
-  --text-primary: #FFFFFF;
-  --text-secondary: #FFFFFF;
+  --color-title: #FFFFFF;
+  --color-description: #FFFFFF;
+  --color-white: #FFFFFF;
   --background-primary: #141D2F;
   --background-secondary: #1E2A47;
+  --box-shadow-primary: 0px 16px 30px -10px #4660BB33;
 }
 
 html {
@@ -30,15 +34,17 @@ html {
 h1 {
   font-family: 'Space Mono';
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 38px;
+  margin: 0;
 }
 
 h2 {
   font-family: 'Space Mono';
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 33px;
+  margin: 0;
 }
 
 h3 {
@@ -46,6 +52,7 @@ h3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  margin: 0;
 }
 
 h4 {
@@ -53,6 +60,7 @@ h4 {
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
+  margin: 0;
 }
 
 body {

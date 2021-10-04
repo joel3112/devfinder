@@ -1,45 +1,54 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import styled from '@emotion/styled';
+import { StyledComponentProps } from './global';
+import Header from './components/Header';
+import Search from './components/Search';
+import { bps } from './styles';
+import { getThemeMode } from './utils/helpers';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const AppContainer = styled.div<StyledComponentProps>`
+  background-color: ${(props) => `${props.theme.bgColors.primary}`};
+
+  ${bps.mobile} {
+    .App-container {
+      height: 100vh;
+      justify-content: initial;
+      padding: 30px 0;
+    }
+  }
+`;
+
+const App = () => {
+  const [darkMode, setDarkMode] = useState<boolean>(Boolean(localStorage.getItem('darkMode')));
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', String(darkMode));
+  }, [darkMode]);
+
+  const handleSubmit = (e: any) => {
+    console.log(e);
+  };
+
+  const handleDarkMode = () => setDarkMode((prev) => !prev);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
-}
+    <AppContainer className={`App theme-${getThemeMode(darkMode)}`}>
+      <div className="App-container">
+        <header className="App-header">
+          <Header darkMode={darkMode} onChangeDarkMode={handleDarkMode} />
+        </header>
 
-export default App
+        <nav className="App-nav">
+          <Search query="" onSubmit={handleSubmit} />
+        </nav>
+
+        <main className="App-main">
+
+        </main>
+      </div>
+    </AppContainer>
+  );
+};
+
+export default App;
