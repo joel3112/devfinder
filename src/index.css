@@ -4,6 +4,7 @@
   --color-title: #2B3442;
   --color-description: #4B6A9B;
   --color-white: #FFFFFF;
+  --color-error: #F74646;
   --background-primary: #F6F8FF;
   --background-secondary: #FEFEFE;
   --box-shadow-primary: 0px 16px 30px -10px #4660BB33;
@@ -15,6 +16,7 @@
   --color-title: #FFFFFF;
   --color-description: #FFFFFF;
   --color-white: #FFFFFF;
+  --color-error: #F74646;
   --background-primary: #141D2F;
   --background-secondary: #1E2A47;
   --box-shadow-primary: 0px 16px 30px -10px #4660BB33;
@@ -75,4 +77,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

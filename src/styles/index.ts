@@ -12,6 +12,7 @@ export const theme: Theme = {
     heading: 'var(--color-title)',
     description: 'var(--color-description)',
     white: 'var(--color-white)',
+    error: 'var(--color-error)',
   },
   bgColors: {
     primary: 'var(--background-primary)',
@@ -35,7 +36,7 @@ export const theme: Theme = {
   fontWeight: {
     light: '300',
     regular: '400',
-    semibold: '500',
+    semibold: '600',
     bold: '700',
   },
   borderRadius: {

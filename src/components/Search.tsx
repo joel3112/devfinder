@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import { useForm } from '../hooks/useForm';
 import Button from './Button';
 import Input from './Input';
-import { FormEventProp, UnknownObject } from '../global';
+import { FormEventProp } from '../global';
 import { bps } from '../styles';
 
 interface SearchProps {
-  query: string,
-  onSubmit: (x: UnknownObject) => void;
-};
+  query: string;
+  onSubmit: (searchText: string) => void;
+}
 
 const SearchContainer = styled.div`
   border-radius: ${({ theme }) => `${theme.borderRadius.medium}`};
@@ -53,7 +53,7 @@ const Search = ({ query = '', onSubmit }: SearchProps) => {
     e.preventDefault();
 
     if (onSubmit) {
-      onSubmit({ searchText });
+      onSubmit(String(searchText));
     }
   };
 
@@ -61,11 +61,7 @@ const Search = ({ query = '', onSubmit }: SearchProps) => {
     <SearchContainer>
       <img src="/assets/icon-search.svg" />
       <form onSubmit={handleSubmit}>
-        <Input 
-          name="searchText" 
-          placeholder="Search GitHub username..." 
-          onChange={handleInputChange} 
-          value={searchText} />
+        <Input name="searchText" placeholder="Search GitHub username..." onChange={handleInputChange} value={searchText} />
         <Button type="submit">Search</Button>
       </form>
     </SearchContainer>

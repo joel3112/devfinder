@@ -1,6 +1,6 @@
 {
   "name": "devfinder-vite-react-ts-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -9,13 +9,18 @@
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "@react-hook/media-query": "^1.1.1",
     "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "object-path": "^0.11.8",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "react-loader-spinner": "^4.0.0",
+    "wouter": "^2.8.0-alpha.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.175",
+    "@types/object-path": "^0.11.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react": "^1.0.0",

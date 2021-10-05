@@ -1,10 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useLocation } from 'wouter';
 import styled from '@emotion/styled';
-import { StyledComponentProps } from './global';
+import { useDarkMode } from './hooks/useDarkMode';
+import { useLoadUser } from './hooks/useLoadUser';
+import Spinner from './components/Spinner';
 import Header from './components/Header';
 import Search from './components/Search';
+import PanelResult from './components/PanelResult';
+import PanelUser from './components/PanelUser';
+import { StyledComponentProps } from './global';
+import { getThemeMode, queryParams } from './utils/helpers';
 import { bps } from './styles';
-import { getThemeMode } from './utils/helpers';
 import './App.css';
 
 const AppContainer = styled.div<StyledComponentProps>`
@@ -20,17 +25,29 @@ const AppContainer = styled.div<StyledComponentProps>`
 `;
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(Boolean(localStorage.getItem('darkMode')));
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', String(darkMode));
-  }, [darkMode]);
-
-  const handleSubmit = (e: any) => {
-    console.log(e);
+  const [darkMode, handleDarkMode] = useDarkMode();  
+  const [location, setLocation] = useLocation();
+  const { q = '' } = queryParams();
+  const { user, loading } = useLoadUser(q);
+  
+  const handleSubmit = (searchText: string) => {
+    let searchLocation = `${location}?q=${searchText}`;
+    setLocation(searchLocation);
   };
 
-  const handleDarkMode = () => setDarkMode((prev) => !prev);
+  const mainTemplate = () => {
+    if (loading) {
+      return <Spinner show={loading} />;
+    }
+
+    return (
+      <>
+        {!q && <PanelResult message="Search the username" />}
+        {q && !user && <PanelResult message="No results, try again later" error={!Boolean(user)} />}
+        {q && user && <PanelUser user={user} />}
+      </>
+    );
+  };
 
   return (
     <AppContainer className={`App theme-${getThemeMode(darkMode)}`}>
@@ -40,11 +57,11 @@ const App = () => {
         </header>
 
         <nav className="App-nav">
-          <Search query="" onSubmit={handleSubmit} />
+          <Search query={q} onSubmit={handleSubmit} />
         </nav>
 
         <main className="App-main">
-
+          {mainTemplate()}
         </main>
       </div>
     </AppContainer>

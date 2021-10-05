@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   width: 730px;
+  max-width: calc(100% - 60px);
   margin: 24px 30px;
 }
 
@@ -30,11 +31,12 @@
 
 .App-main {
   width: 100%;
-  height: inherit;
   min-height: 419px;
   box-shadow: var(--box-shadow-primary);
   border-radius: 15px;
   background-color: var(--background-secondary);
   display: flex;
+  justify-content: center;
   align-items: center;
+  overflow: hidden;
 }

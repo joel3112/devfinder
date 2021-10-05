@@ -21,6 +21,7 @@ declare module '@emotion/react' {
       heading: string;
       description: string;
       white: string;
+      error: string;
     };
     bgColors: {
       primary: string;
@@ -36,7 +37,10 @@ declare module '@emotion/react' {
 }
 
 export interface StyledComponentProps {
-  children: ChildrenProp;
+  children?: ChildrenProp;
   theme?: Theme;
   className?: string;
+  disabled?: boolean,
+  size?: number;
+  src?: string;
 }
