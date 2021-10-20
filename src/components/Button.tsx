@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { ChildrenProp, MouseEventProp, StyledComponentProps } from '../global';
 import { bps } from '../styles';
 
-interface ButtonProps {
+type ButtonProps = {
   children: ChildrenProp;
   type?: 'button' | 'reset' | 'submit' | undefined;
   onClick?: MouseEventProp;

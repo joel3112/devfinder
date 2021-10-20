@@ -9,7 +9,7 @@ import { StyledComponentProps } from '../global';
 import { bps } from '../styles';
 import { userNumbersMapper, userSocialMapper } from '../utils/helpers';
 
-interface PanelUserProps {
+type PanelUserProps = {
   user: User;
 }
 

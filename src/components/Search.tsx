@@ -5,7 +5,7 @@ import Input from './Input';
 import { FormEventProp } from '../global';
 import { bps } from '../styles';
 
-interface SearchProps {
+type SearchProps = {
   query: string;
   onSubmit: (searchText: string) => void;
 }

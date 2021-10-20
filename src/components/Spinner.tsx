@@ -1,6 +1,6 @@
 import Loader from "react-loader-spinner";
 
-interface SpinnerProps {
+type SpinnerProps = {
   show: boolean;
 }
 

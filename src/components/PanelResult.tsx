@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { StyledComponentProps } from '../global';
 import Avatar from './Avatar';
 
-interface PanelResultProps {
+type PanelResultProps = {
   message: string;
   image?: string;
   error?: boolean;

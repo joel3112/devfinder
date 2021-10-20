@@ -3,7 +3,7 @@ import ItemNumber, { ItemNumberProps } from './ItemNumber';
 import { StyledComponentProps } from '../global';
 import { bps } from '../styles';
 
-interface PanelNumbersProps {
+type PanelNumbersProps = {
   items?: Array<ItemNumberProps>;
 }
 

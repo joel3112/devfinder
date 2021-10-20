@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { MouseEventProp, StyledComponentProps } from '../global';
 import { getThemeMode } from '../utils/helpers';
 
-interface HeaderProps {
+type HeaderProps = {
   darkMode: boolean;
   onChangeDarkMode?: MouseEventProp;
 }

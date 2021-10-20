@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { ChangeEventProp, StyledComponentProps } from '../global';
 import { bps } from '../styles';
 
-interface InputProps {
+type InputProps = {
   name: string;
   placeholder: string;
   onChange: ChangeEventProp;

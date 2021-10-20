@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { StyledComponentProps } from '../global';
 import { bps } from '../styles';
 
-interface ItemListProps {
+type ItemListProps = {
   title: string;
   subtitle: string;
   description?: string;

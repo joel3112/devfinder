@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { StyledComponentProps } from '../global';
 
-interface AvatarProps {
+type AvatarProps = {
   image: string;
   size?: number;
 }

@@ -3,7 +3,7 @@ import ItemIcon, { ItemIconProps } from './ItemIcon';
 import { StyledComponentProps } from '../global';
 import { bps } from '../styles';
 
-interface PanelSocialsProps {
+type PanelSocialsProps = {
   items?: Array<ItemIconProps>;
 }
 
