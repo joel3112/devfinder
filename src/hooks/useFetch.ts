@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, MutableRefObject } from 'react';
 import { UnknownObject } from '../global';
 
-export type UseFetch = {
+type UseFetch = {
   data: UnknownObject | null,
   loading: boolean,
   error: string | UnknownObject | null,
 };
 
-export type UseFetchHook = (url: string, delay?: number) => UseFetch;
+type UseFetchHook = (url: string, delay?: number) => UseFetch;
 
 export const useFetch: UseFetchHook = (url: string, delay: number = 500) => {
   const isMounted: MutableRefObject<boolean> = useRef(true);

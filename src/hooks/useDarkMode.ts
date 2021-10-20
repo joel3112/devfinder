@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
-export type UseDarkMode = [
+type UseDarkMode = [
   darkMode: boolean,
   handleDarkMode: () => void,
 ];
 
-export type UseDarkModeHook = () => UseDarkMode;
+type UseDarkModeHook = () => UseDarkMode;
 
 export const useDarkMode: UseDarkModeHook = () => {
   const [darkMode, setDarkMode] = useState<boolean>(JSON.parse(localStorage.getItem('darkMode') as string));

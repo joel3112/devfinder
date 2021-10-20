@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export type UseMediaQueryHook = (mediaQuery: string) => boolean;
+type UseMediaQueryHook = (mediaQuery: string) => boolean;
 
 export const useMediaQuery: UseMediaQueryHook = (mediaQuery: string) => {
   const [matches, setMatches] = useState<boolean>(false);

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { StyledComponentProps } from '../global';
 
-export interface ItemNumberProps {
+export type ItemNumberProps = {
   label: string;
   number: number;
 }

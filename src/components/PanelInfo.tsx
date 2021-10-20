@@ -3,11 +3,16 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 import ItemList from './ItemList';
 import Avatar from './Avatar';
 import { StyledComponentProps } from '../global';
-import { User } from '../hooks/useLoadUser';
 import { bps } from '../styles';
 import { formattedDate } from '../utils/helpers';
 
-interface PanelInfoProps extends User {}
+type PanelInfoProps = {
+  date: string;
+  description: string;
+  image: string;
+  name: string;
+  username: string;
+}
 
 const PanelInfoContainer = styled.div<StyledComponentProps>`
   height: inherit;

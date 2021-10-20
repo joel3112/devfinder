@@ -1,13 +1,13 @@
 import { ChangeEvent, useState } from 'react';
 import { ChangeEventProp, UnknownObject } from '../global';
 
-export type UseForm = [
+type UseForm = [
   values: UnknownObject, 
   handleInputChange: ChangeEventProp, 
   reset?: () => void
 ];
 
-export type UseFormHook = (initialState: UnknownObject) => UseForm;
+type UseFormHook = (initialState: UnknownObject) => UseForm;
 
 export const useForm: UseFormHook = (initialState: UnknownObject = {}) => {
   const [values, setValues] = useState<UnknownObject>(initialState);

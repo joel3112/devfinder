@@ -16,12 +16,12 @@ export interface User {
   following: number;
 }
 
-export type UseLoadUser = {
+type UseLoadUser = {
   user: User | null;
   loading: boolean;
 };
 
-export type UseLoadUserHook = (search: string) => UseLoadUser;
+type UseLoadUserHook = (search: string) => UseLoadUser;
 
 export const useLoadUser: UseLoadUserHook = (search: string) => {
   const { data, loading, error } = useFetch(`https://api.github.com/users/${search}`);

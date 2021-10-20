@@ -3,7 +3,7 @@ import { StyledComponentProps } from '../global';
 import { bps } from '../styles';
 import { isValidateUrl } from '../utils/helpers';
 
-export interface ItemIconProps {
+export type ItemIconProps = {
   id: string;
   value: string;
 }
